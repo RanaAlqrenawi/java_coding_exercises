@@ -1,6 +1,10 @@
 package com.techreturners.exercise001;
 
+import java.io.Console;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.List;
+
 
 public class Exercise001 {
     public String capitalizeWord(String word) {
@@ -10,21 +14,25 @@ public class Exercise001 {
 
     public String generateInitials(String firstName, String lastName) {
         // Add your code here
-        return "";
+        return firstName.charAt(0)+"."+lastName.charAt(0);
     }
 
     public double addVat(double originalPrice, double vatRate) {
-        // Add your code here
-        return 0.0;
+        double input = (vatRate/100)* originalPrice + originalPrice;
+        BigDecimal bd = new BigDecimal(input).setScale(2, RoundingMode.HALF_UP); 
+        return bd.doubleValue();
+
     }
 
-    public String reverse(String sentence) {
-        // Add your code here
-        return "";
+    public String reverse(String sentence) { 
+        if (sentence.isEmpty()){
+            return sentence;
+        }
+        return reverse(sentence.substring(1)) + sentence.charAt(0);
     }
 
     public int countLinuxUsers(List<User> users) {
-        // Add your code here
+        users.indexOf("Linux");
         return 0;
     }
 }
