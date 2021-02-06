@@ -1,10 +1,8 @@
 package com.techreturners.exercise001;
 
-import java.io.Console;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.List;
-
 
 public class Exercise001 {
     public String capitalizeWord(String word) {
@@ -32,7 +30,12 @@ public class Exercise001 {
     }
 
     public int countLinuxUsers(List<User> users) {
-        users.indexOf("Linux");
-        return 0;
+        int count=0;        
+        for(User u:users){
+            if(u.getType().contains("Linux")){
+                count++;
+            }
+        }
+        return count;
     }
 }
